@@ -1,0 +1,11 @@
+2023/05/15
+
+1. "main.py" is the main file. It runs the others. The other files shouldn't be run themselves.
+
+2. The files "classes.py", "code.py", "db.py", "main.py" are code files and shouldn't be edited.
+
+3. The folder "tasks" contains text files with tasks. These files should be named by names of departments and filled with tasks for each department. The tasks for each day should be divided with an empty line.
+
+4. The file "settings.py" can be edited, but it isn't safe.
+
+5. The file "users.db" is a SQL database with telegram users. It can be edited.

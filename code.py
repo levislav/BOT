@@ -4,6 +4,7 @@ import aiogram
 import classes
 import db
 import intrepretator2
+import settings
 
 
 async def main(bot: aiogram.Bot, bot_dispatcher: aiogram.Dispatcher):
@@ -15,9 +16,8 @@ async def main(bot: aiogram.Bot, bot_dispatcher: aiogram.Dispatcher):
                                                 f"Чтобы продолжить, мне надо получить от тебя некоторую информацию.")
 
         kb = aiogram.types.ReplyKeyboardMarkup(row_width=1, one_time_keyboard=True, resize_keyboard=True)
-        b1 = aiogram.types.KeyboardButton("department1")
-        b2 = aiogram.types.KeyboardButton("department2")
-        kb.add(b1, b2)
+        buttons = [aiogram.types.KeyboardButton(text=b) for b in settings.departments]
+        kb.add(*buttons)
 
         await bot.send_message(message.chat.id, "Во первых, в каком отделе ты работаешь?", reply_markup=kb)
         department = await classes.user_input(bot_dispatcher)
